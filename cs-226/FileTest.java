@@ -16,7 +16,7 @@ public class FileTest {
         //System.out.println("Does this file exist? " + file.exists());
 
         Scanner input = new Scanner(System.in);
-        System.out.print("Please enter a file path to read out test scores: ");
+        System.out.print("Please enter the correct file path to read out test scores: ");
 
         String filePath = input.nextLine();
         File file = new File(filePath);
@@ -28,18 +28,8 @@ public class FileTest {
             
             if (testScore > 100) {
                 new InvalidTestScoreException(testScore);
-            }
-        }
-    }
-
-    static void fileReading(Scanner fileRead) throws InvalidTestScoreException{
-        int testScore = 0;
-
-        while (fileRead.hasNext()){
-            testScore = fileRead.nextInt(); 
-            
-            if (testScore > 100) {
-                new InvalidTestScoreException(testScore);
+            } else {
+                System.out.println(testScore);
             }
         }
     }
